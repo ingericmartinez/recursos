@@ -1,0 +1,61 @@
+Aquí tienes un **súper prompt** diseñado para extraer la funcionalidad de una aplicación Java Legacy y facilitar su migración a una arquitectura moderna (como microservicios, cloud-native, etc.):
+
+---
+
+### **Prompt para Análisis y Modernización de Java Legacy**  
+**Objetivo**:  
+Extraer la lógica de negocio, flujos, dependencias y componentes clave de una aplicación Java Legacy (p. ej., monolito J2EE, Spring antiguo, Struts, etc.) para poder replantearla en una arquitectura moderna (microservicios, serverless, reactive, etc.).  
+
+#### **Instrucciones para el Analista/Arquitecto (IA o Humano)**:  
+1. **Descripción General**:  
+   - Resume el propósito principal de la aplicación.  
+   - Identifica los usuarios/claves y sus roles.  
+   - Menciona tecnologías legacy usadas (ej.: Java 8, EJB 2.x, Servlets, JDBC directo).  
+
+2. **Extracción de Funcionalidades**:  
+   - Lista los módulos/core features (ej.: "Gestión de Pedidos", "Reportes PDF", "Integración con SAP").  
+   - Para cada módulo, detalla:  
+     - **Flujos principales** (secuencias de pasos).  
+     - **Clases/Componentes clave** (ej.: `OrderManagerBean`, `LegacyReportService`).  
+     - **Dependencias externas** (bases de datos, APIs, colas).  
+
+3. **Análisis de Deuda Técnica**:  
+   - Identifica patrones problemáticos (ej.: acoplamiento alto, SQL hardcodeado).  
+   - Señala componentes candidatos a microservicios o funciones serverless.  
+
+4. **Propuesta de Arquitectura Moderna**:  
+   - Sugiere cómo reimplementar cada módulo en:  
+     - **Microservicios** (Spring Boot, Quarkus).  
+     - **Event-Driven** (Kafka, RabbitMQ).  
+     - **Persistencia** (JPA/Hibernate vs. NoSQL).  
+   - Recomienda estrategias de migración (Strangler Fig, Rehosting, Refactoring).  
+
+5. **Output Estructurado** (para usar en prompts futuros):  
+   ```markdown  
+   ## Aplicación: [Nombre]  
+   ### Propósito:  
+   [Descripción breve]  
+
+   ### Módulos:  
+   - **[Módulo 1]**:  
+     - Flujos: [Paso 1 → Paso 2]  
+     - Clases: [`ClaseA`, `ClaseB`]  
+     - Dependencias: [Oracle DB, API SOAP]  
+   - **[Módulo 2]**: ...  
+
+   ### Deuda Técnica:  
+   - [Ejemplo: "Clase X tiene 2000 líneas de código"]  
+
+   ### Arquitectura Sugerida:  
+   - [Ejemplo: "Microservicio Spring Boot + PostgreSQL + OpenAPI"]  
+   ```  
+
+---
+
+### **Ejemplo de Uso**:  
+1. **Paso 1**: Ejecuta este prompt con el código/descripción de la app legacy.  
+2. **Paso 2**: Usa el output para pedir ayuda concreta (ej.: *"Genera un CRUD RESTful en Spring Boot reemplazando el EJB 2.x del módulo de Pedidos"*).  
+
+**Nota**: Si tienes acceso al código, adjunta fragmentos clave (ej.: métodos complejos, config XML) para un análisis más preciso.  
+
+¿Quieres que adapte el prompt a algún framework legacy específico (ej.: JSF, Struts) o tipo de modernización (ej.: Kubernetes, AWS Lambda)?
